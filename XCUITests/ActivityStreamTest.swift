@@ -191,6 +191,8 @@ class ActivityStreamTest: BaseTestCase {
         app.cells["TopSitesCell"].cells.element(boundBy: 3).press(forDuration:1)
         selectOptionFromContextMenu(option: "Open in New Tab")
         // Check that two tabs are open and one of them is the default top site one
+        // Needed for BB to work after iOS 13.3 update
+        sleep(1)
         navigator.nowAt(HomePanelsScreen)
         navigator.goto(TabTray)
         waitForExistence(app.collectionViews.cells[defaultTopSite["bookmarkLabel"]!])
