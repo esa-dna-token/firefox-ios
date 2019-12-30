@@ -240,6 +240,7 @@ class ActivityStreamTest: BaseTestCase {
         // Check that two tabs are open and one of them is the default top site one
         // Workaroud needed after xcode 11.3 update Issue 5937
         sleep(1)
+        waitForTabsButton()
         navigator.nowAt(HomePanelsScreen)
         navigator.toggleOn(userState.isPrivate, withAction: Action.TogglePrivateMode)
 
